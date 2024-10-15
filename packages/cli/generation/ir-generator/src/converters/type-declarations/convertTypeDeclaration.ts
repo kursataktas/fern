@@ -67,6 +67,7 @@ export async function convertTypeDeclaration({
         typeDeclaration: {
             ...declaration,
             name: declaredTypeName,
+            inline: false,
             shape: await convertType({ typeDeclaration, file, typeResolver }),
             referencedTypes: new Set(referencedTypes.map((referencedType) => referencedType.typeId)),
             encoding: convertTypeDeclarationEncoding({ typeDeclaration, source }),
